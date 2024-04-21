@@ -38,7 +38,7 @@ namespace MomentCurvature.Data
         public double CompressiveStrength { get => _CompressiveStrength; set => _CompressiveStrength = value; }
         public double Ec { get => 5000 * Math.Sqrt(CompressiveStrength); }
         
-        public double ESec { get => _ESec; set => _ESec = value; }
+        public double ESec { get => _ESec; set => _ESec = value; } // TODO unnecesary
         public double R { get => _R; set => _R = value; }
 
 

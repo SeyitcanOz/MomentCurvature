@@ -161,6 +161,10 @@ namespace MomentCurvature.User_Control
 
                 ultimateStrain = 0.0035 + 0.04 * Math.Sqrt(alpha * Math.Min(rhoX, rhoY) * _Stirrup.YieldingStrength / fe);
 
+                if (ultimateStrain > 0.018)
+                {
+                    ultimateStrain = 0.018;
+                }
             }
             else
             {
@@ -447,36 +451,62 @@ namespace MomentCurvature.User_Control
         {
             GetConcreteStirrupAndBars(out _Concrete, out _Stirrup, out _LongitudinalBarList);
 
-            double lowerBound = 0; // Initial lower bound for neutral axis
-            double upperBound = _Concrete.Height; // Initial upper bound for neutral axis
+            //double lowerBound = 0; // Initial lower bound for neutral axis
+            //double upperBound = _Concrete.Height; // Initial upper bound for neutral axis
 
-            double neutralAxis = _Concrete.Height / 2; // Initial guess for neutral axis
+            //double neutralAxis = _Concrete.Height / 2; // Initial guess for neutral axis
 
-            while (true)
+            //while (true)
+            //{
+            //    var concreteForces = CalculateForcesForLayer(neutralAxis, strain).Sum();
+            //    var steelForces = CalculateSteelForces(neutralAxis, strain).Sum();
+            //    var totalForces = concreteForces + steelForces - axialLoad;
+
+            //    // Check if the total forces are within the balance error
+            //    if (Math.Abs(totalForces) < balanceError)
+            //    {
+            //        break; // Neutral axis found-
+            //    }
+
+            //    // Adjust the bounds based on the sign of the total forces
+            //    if (totalForces > balanceError)
+            //    {
+            //        upperBound = neutralAxis; // Adjust upper bound
+            //    }
+            //    else
+            //    {
+            //        lowerBound = neutralAxis; // Adjust lower bound
+            //    }
+
+            //    // Update the neutral axis using bisection method
+            //    neutralAxis = (lowerBound + upperBound) / 2;
+            //}
+
+            double neutralAxis = _Concrete.Height / 2;
+
+            int numberOfLayers = Convert.ToInt32(txtNumberOfLayers.Text);
+
+
+            for (int i = 0; i < numberOfLayers; i++)
             {
                 var concreteForces = CalculateForcesForLayer(neutralAxis, strain).Sum();
                 var steelForces = CalculateSteelForces(neutralAxis, strain).Sum();
                 var totalForces = concreteForces + steelForces - axialLoad;
 
-                // Check if the total forces are within the balance error
-                if (Math.Abs(totalForces) < balanceError)
+                if(totalForces < 0)
                 {
-                    break; // Neutral axis found
-                }
-
-                // Adjust the bounds based on the sign of the total forces
-                if (totalForces > balanceError)
-                {
-                    upperBound = neutralAxis; // Adjust upper bound
+                    break;
                 }
                 else
                 {
-                    lowerBound = neutralAxis; // Adjust lower bound
+                    neutralAxis -= _Concrete.Height / numberOfLayers;
                 }
 
-                // Update the neutral axis using bisection method
-                neutralAxis = (lowerBound + upperBound) / 2;
+                if(neutralAxis <= 0) { break; }
+
+
             }
+
 
             return neutralAxis;
 
@@ -547,7 +577,7 @@ namespace MomentCurvature.User_Control
                 }
                 else
                 {
-                    _CurvatureList.Add((strainList[i] / neutralAxisList[i]) * Math.Pow(10, 6)); // Convert to rad / km
+                    _CurvatureList.Add((strainList[i] / (neutralAxisList[i])- _Concrete.ClearCover - _Stirrup.Diameter) * Math.Pow(10, 6)); // Convert to rad / km
 
                     //var moment = 0.0;
                     //for (int j = 0; j < _MidLayerList.Count; j++)
