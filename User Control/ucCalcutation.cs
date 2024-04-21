@@ -28,6 +28,7 @@ namespace MomentCurvature.User_Control
         private Concrete _Concrete;
         private Stirrup _Stirrup;
         private BindingList<LongitudinalBar> _LongitudinalBarList;
+        private double _Yarrak = 32;//cm
 
         private List<double> _ConfinedAreaList = new List<double>();
         private List<double> _UnconfinedAreaList = new List<double>();
