@@ -28,8 +28,8 @@ namespace MomentCurvature.User_Control
         private Concrete _Concrete;
         private Stirrup _Stirrup;
         private BindingList<LongitudinalBar> _LongitudinalBarList;
-        // deneme123
 
+        // Push Deneme
         private List<double> _ConfinedAreaList = new List<double>();
         private List<double> _UnconfinedAreaList = new List<double>();
         private List<double> _MidLayerList = new List<double>();
