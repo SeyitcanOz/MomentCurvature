@@ -29,7 +29,7 @@ namespace MomentCurvature.User_Control
         private Stirrup _Stirrup;
         private BindingList<LongitudinalBar> _LongitudinalBarList;
 
-        // Push Deneme
+        // Push Deneme asd 
         private List<double> _ConfinedAreaList = new List<double>();
         private List<double> _UnconfinedAreaList = new List<double>();
         private List<double> _MidLayerList = new List<double>();
