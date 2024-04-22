@@ -77,7 +77,7 @@ namespace MomentCurvature.User_Control
 
             else
             {
-                var aixTop = _Concrete.Width - 2 * _Concrete.ClearCover - _Stirrup.NumberOfLegY * _Stirrup.Diameter - _LongitudinalBarList[0].Diameter;
+                var aixTop = _Concrete.Width - 2 * _Concrete.ClearCover - _Stirrup.NumberOfLegY * _Stirrup.Diameter - _LongitudinalBarList[0].Diameter; //TODO Look again, this should be divided by number of longitudinal bars (kesit çevresindeki boyuna donatıların eksenleri arası uzaklığı)
                 var aixBot = _Concrete.Width - 2 * _Concrete.ClearCover - _Stirrup.NumberOfLegY * _Stirrup.Diameter - _LongitudinalBarList[1].Diameter;
                 var aiy = _Concrete.Height - 2 * _Concrete.ClearCover - _Stirrup.NumberOfLegX * _Stirrup.Diameter - 0.5 * (_LongitudinalBarList[0].Diameter + _LongitudinalBarList[1].Diameter);
 
@@ -159,7 +159,7 @@ namespace MomentCurvature.User_Control
 
 
 
-                ultimateStrain = 0.0035 + 0.04 * Math.Sqrt(alpha * Math.Min(rhoX, rhoY) * _Stirrup.YieldingStrength / fe);
+                ultimateStrain = 0.0035 + 0.04 * Math.Sqrt(alpha * Math.Min(rhoX, rhoY) * _Stirrup.YieldingStrength / fe); // TODO In the code, fce is used instead of fe 
 
                 if (ultimateStrain > 0.018)
                 {
