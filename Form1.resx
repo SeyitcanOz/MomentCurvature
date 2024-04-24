@@ -118,14 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="memoEdit1.EditValue" xml:space="preserve">
-    <value>Longitudinal Steel bars should be located from top concrete cover.
-
-Users can use stirrups if they click "Use Stirrups" check.
+    <value>Users can use stirrups if they click "Use Stirrups" check.
 
 Stirrups allocated to the section as rectangular with two legs.
 
+Bilinear Steel Model is used.
+
 Program does not  take any action for exception handling.
 
-Therefore, to take accurate outputs users should give inputs correctly.</value>
+Therefore, to take accurate outputs users should give inputs correctly.
+</value>
   </data>
 </root>

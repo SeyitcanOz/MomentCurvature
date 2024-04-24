@@ -21,6 +21,7 @@ namespace MomentCurvature.Data
             Depth= depth;
             Count= count;
             Diameter= diameter;
+
             YieldStrength = yieldStrength;
             UltimateStrength = ultimateStrength;
             UltimateStrain = ultimateStrain;
@@ -52,6 +53,7 @@ namespace MomentCurvature.Data
         public double UltimateStrength { get => _UltimateStrength; set => _UltimateStrength = value; }
         public double YieldStrain { get => _YieldStrength / 200000; }
         public double UltimateStrain { get => _UltimateStrain; set => _UltimateStrain = value; }
+        public double ElasticModulus { get => 200000; }
 
         #endregion
 

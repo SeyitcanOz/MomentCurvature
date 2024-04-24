@@ -34,12 +34,12 @@
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.ucConcrete1 = new MomentCurvature.User_Control.ucConcrete();
+            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.ucStirrup1 = new MomentCurvature.User_Control.ucStirrup();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.gridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ucLongitudinalBar1 = new MomentCurvature.User_Control.ucLongitudinalBar();
-            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
-            this.ucStirrup1 = new MomentCurvature.User_Control.ucStirrup();
             this.pnlChart = new DevExpress.XtraEditors.PanelControl();
             this.chartControl = new DevExpress.XtraCharts.ChartControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
@@ -52,10 +52,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
+            this.xtraTabPage3.SuspendLayout();
             this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            this.xtraTabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnlChart)).BeginInit();
             this.pnlChart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl)).BeginInit();
@@ -104,6 +104,21 @@
             this.ucConcrete1.Name = "ucConcrete1";
             this.ucConcrete1.Size = new System.Drawing.Size(479, 233);
             this.ucConcrete1.TabIndex = 0;
+            // 
+            // xtraTabPage3
+            // 
+            this.xtraTabPage3.Controls.Add(this.ucStirrup1);
+            this.xtraTabPage3.Name = "xtraTabPage3";
+            this.xtraTabPage3.Size = new System.Drawing.Size(479, 727);
+            this.xtraTabPage3.Text = "Stirrup Properties";
+            // 
+            // ucStirrup1
+            // 
+            this.ucStirrup1.Location = new System.Drawing.Point(0, 0);
+            this.ucStirrup1.Name = "ucStirrup1";
+            this.ucStirrup1.Size = new System.Drawing.Size(479, 383);
+            this.ucStirrup1.Stirrup = null;
+            this.ucStirrup1.TabIndex = 0;
             // 
             // xtraTabPage2
             // 
@@ -160,21 +175,6 @@
             this.ucLongitudinalBar1.Size = new System.Drawing.Size(476, 566);
             this.ucLongitudinalBar1.TabIndex = 0;
             // 
-            // xtraTabPage3
-            // 
-            this.xtraTabPage3.Controls.Add(this.ucStirrup1);
-            this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(479, 727);
-            this.xtraTabPage3.Text = "Stirrup Properties";
-            // 
-            // ucStirrup1
-            // 
-            this.ucStirrup1.Location = new System.Drawing.Point(0, 0);
-            this.ucStirrup1.Name = "ucStirrup1";
-            this.ucStirrup1.Size = new System.Drawing.Size(479, 383);
-            this.ucStirrup1.Stirrup = null;
-            this.ucStirrup1.TabIndex = 0;
-            // 
             // pnlChart
             // 
             this.pnlChart.Controls.Add(this.chartControl);
@@ -185,6 +185,7 @@
             // 
             // chartControl
             // 
+            this.chartControl.BorderOptions.Thickness = 2;
             this.chartControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartControl.Legend.LegendID = -1;
             this.chartControl.Location = new System.Drawing.Point(2, 2);
@@ -249,16 +250,16 @@
             this.MinimizeBox = false;
             this.Name = "frmMain";
             this.ShowIcon = false;
-            this.Text = "Moment Curvature";
+            this.Text = "Moment Curvature - Created by Seyitcan Oz";
             ((System.ComponentModel.ISupportInitialize)(this.pnlMainProperties)).EndInit();
             this.pnlMainProperties.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
+            this.xtraTabPage3.ResumeLayout(false);
             this.xtraTabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            this.xtraTabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pnlChart)).EndInit();
             this.pnlChart.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartControl)).EndInit();

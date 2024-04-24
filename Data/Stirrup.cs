@@ -11,16 +11,6 @@ namespace MomentCurvature.Data
         #region CTOR
         public Stirrup()
         {
-            _UseStirrup = false;
-
-            Spacing = 0;
-            Diameter = 0;
-            NumberOfLegX = 0;
-            NumberOfLegY = 0;
-            
-            YieldingStrength = 0;
-            UltimateStrength = 0;
-            UltimateStrain = 0;
 
         }
         #endregion
@@ -52,8 +42,8 @@ namespace MomentCurvature.Data
         public double UltimateStrength { get => _UltimateStrength; set => _UltimateStrength = value; }
         public double UltimateStrain { get => _UltimateStrain; set => _UltimateStrain = value; }
 
-        public double Asx { get => (Math.PI * Math.Pow(Diameter, 2) / 4 * NumberOfLegX); }
-        public double Asy { get => (Math.PI * Math.Pow(Diameter, 2) / 4 * NumberOfLegY); }
+        public double Asx { get => ((Math.PI * Math.Pow(Diameter, 2) / 4) * NumberOfLegX); }
+        public double Asy { get => ((Math.PI * Math.Pow(Diameter, 2) / 4) * NumberOfLegY); }
 
 
 

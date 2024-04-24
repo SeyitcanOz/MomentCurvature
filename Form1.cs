@@ -32,20 +32,22 @@ namespace MomentCurvature
             gridView1.Columns[1].Caption = "n";
             gridView1.Columns[2].Caption = "Φ";
             gridView1.Columns[3].Caption = "Area";
-            gridView1.Columns[4].Caption = "Fy";
-            gridView1.Columns[5].Caption = "Fu";
-            gridView1.Columns[6].Caption = "Ult. Strain";
+            gridView1.Columns[4].Caption = "fy";
+            gridView1.Columns[5].Caption = "fu";
+            gridView1.Columns[6].Caption = "εsy";
+            gridView1.Columns[7].Caption = "εsu";
+            gridView1.Columns[8].Caption = "E";
 
 
             gridView1.OptionsView.ShowGroupPanel = false;
-            gridControl.MainView.ViewCaption = "Longitudinal Bars";
 
+            gridControl.MainView.ViewCaption = "Longitudinal Bars";
             foreach (GridColumn column in gridView1.Columns)
             {
                 column.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             }
 
-
+            
 
         }
 

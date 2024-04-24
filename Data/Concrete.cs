@@ -25,9 +25,6 @@ namespace MomentCurvature.Data
         private double _Height;
         private double _CompressiveStrength;
 
-        private double _ESec;
-        private double _R;
-
         #endregion
 
         #region Properties
@@ -38,10 +35,6 @@ namespace MomentCurvature.Data
         public double CompressiveStrength { get => _CompressiveStrength; set => _CompressiveStrength = value; }
         public double Ec { get => 5000 * Math.Sqrt(CompressiveStrength); }
         
-        public double ESec { get => _ESec; set => _ESec = value; } // TODO unnecesary
-        public double R { get => _R; set => _R = value; }
-
-
         #endregion
 
 

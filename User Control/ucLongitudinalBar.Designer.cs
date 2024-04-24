@@ -29,26 +29,27 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtDiameterTop = new DevExpress.XtraEditors.TextEdit();
+            this.txtCountTop = new DevExpress.XtraEditors.TextEdit();
+            this.txtYieldStrengthTop = new DevExpress.XtraEditors.TextEdit();
+            this.txtUltimateStrengthTop = new DevExpress.XtraEditors.TextEdit();
+            this.txtUltimateStrainTop = new DevExpress.XtraEditors.TextEdit();
+            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.txtCountBot = new DevExpress.XtraEditors.TextEdit();
+            this.txtDiameterBot = new DevExpress.XtraEditors.TextEdit();
+            this.txtYieldStrengthBot = new DevExpress.XtraEditors.TextEdit();
+            this.txtUltimateStrengthBot = new DevExpress.XtraEditors.TextEdit();
+            this.txtUltimateStrainBot = new DevExpress.XtraEditors.TextEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtCountTop = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtDiameterTop = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtYieldStrengthTop = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtUltimateStrengthTop = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtUltimateStrainTop = new DevExpress.XtraEditors.TextEdit();
-            this.txtUltimateStrengthBot = new DevExpress.XtraEditors.TextEdit();
-            this.txtCountBot = new DevExpress.XtraEditors.TextEdit();
-            this.txtYieldStrengthBot = new DevExpress.XtraEditors.TextEdit();
-            this.txtDiameterBot = new DevExpress.XtraEditors.TextEdit();
-            this.txtUltimateStrainBot = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup5 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup6 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -58,29 +59,28 @@
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDiameterTop.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCountTop.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtYieldStrengthTop.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUltimateStrengthTop.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUltimateStrainTop.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCountBot.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDiameterBot.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtYieldStrengthBot.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUltimateStrengthBot.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUltimateStrainBot.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCountTop.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDiameterTop.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtYieldStrengthTop.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUltimateStrengthTop.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUltimateStrainTop.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUltimateStrengthBot.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCountBot.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtYieldStrengthBot.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDiameterBot.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUltimateStrainBot.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
@@ -113,6 +113,125 @@
             this.layoutControl1.Size = new System.Drawing.Size(387, 568);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // txtDiameterTop
+            // 
+            this.txtDiameterTop.Location = new System.Drawing.Point(163, 102);
+            this.txtDiameterTop.Name = "txtDiameterTop";
+            this.txtDiameterTop.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtDiameterTop.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtDiameterTop.Properties.MaskSettings.Set("mask", "f");
+            this.txtDiameterTop.Size = new System.Drawing.Size(188, 20);
+            this.txtDiameterTop.StyleController = this.layoutControl1;
+            this.txtDiameterTop.TabIndex = 6;
+            // 
+            // txtCountTop
+            // 
+            this.txtCountTop.Location = new System.Drawing.Point(163, 78);
+            this.txtCountTop.Name = "txtCountTop";
+            this.txtCountTop.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtCountTop.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtCountTop.Properties.MaskSettings.Set("mask", "f");
+            this.txtCountTop.Size = new System.Drawing.Size(188, 20);
+            this.txtCountTop.StyleController = this.layoutControl1;
+            this.txtCountTop.TabIndex = 5;
+            // 
+            // txtYieldStrengthTop
+            // 
+            this.txtYieldStrengthTop.Location = new System.Drawing.Point(163, 171);
+            this.txtYieldStrengthTop.Name = "txtYieldStrengthTop";
+            this.txtYieldStrengthTop.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtYieldStrengthTop.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtYieldStrengthTop.Properties.MaskSettings.Set("mask", "f");
+            this.txtYieldStrengthTop.Size = new System.Drawing.Size(188, 20);
+            this.txtYieldStrengthTop.StyleController = this.layoutControl1;
+            this.txtYieldStrengthTop.TabIndex = 7;
+            // 
+            // txtUltimateStrengthTop
+            // 
+            this.txtUltimateStrengthTop.Location = new System.Drawing.Point(163, 195);
+            this.txtUltimateStrengthTop.Name = "txtUltimateStrengthTop";
+            this.txtUltimateStrengthTop.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtUltimateStrengthTop.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtUltimateStrengthTop.Properties.MaskSettings.Set("mask", "f");
+            this.txtUltimateStrengthTop.Size = new System.Drawing.Size(188, 20);
+            this.txtUltimateStrengthTop.StyleController = this.layoutControl1;
+            this.txtUltimateStrengthTop.TabIndex = 8;
+            // 
+            // txtUltimateStrainTop
+            // 
+            this.txtUltimateStrainTop.Location = new System.Drawing.Point(163, 219);
+            this.txtUltimateStrainTop.Name = "txtUltimateStrainTop";
+            this.txtUltimateStrainTop.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtUltimateStrainTop.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtUltimateStrainTop.Properties.MaskSettings.Set("mask", "0.000");
+            this.txtUltimateStrainTop.Size = new System.Drawing.Size(188, 20);
+            this.txtUltimateStrainTop.StyleController = this.layoutControl1;
+            this.txtUltimateStrainTop.TabIndex = 9;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(12, 534);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(363, 22);
+            this.btnSave.StyleController = this.layoutControl1;
+            this.btnSave.TabIndex = 10;
+            this.btnSave.Text = "Save";
+            // 
+            // txtCountBot
+            // 
+            this.txtCountBot.Location = new System.Drawing.Point(163, 345);
+            this.txtCountBot.Name = "txtCountBot";
+            this.txtCountBot.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtCountBot.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtCountBot.Properties.MaskSettings.Set("mask", "f");
+            this.txtCountBot.Size = new System.Drawing.Size(188, 20);
+            this.txtCountBot.StyleController = this.layoutControl1;
+            this.txtCountBot.TabIndex = 5;
+            // 
+            // txtDiameterBot
+            // 
+            this.txtDiameterBot.Location = new System.Drawing.Point(163, 369);
+            this.txtDiameterBot.Name = "txtDiameterBot";
+            this.txtDiameterBot.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtDiameterBot.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtDiameterBot.Properties.MaskSettings.Set("mask", "f");
+            this.txtDiameterBot.Size = new System.Drawing.Size(188, 20);
+            this.txtDiameterBot.StyleController = this.layoutControl1;
+            this.txtDiameterBot.TabIndex = 6;
+            // 
+            // txtYieldStrengthBot
+            // 
+            this.txtYieldStrengthBot.Location = new System.Drawing.Point(163, 438);
+            this.txtYieldStrengthBot.Name = "txtYieldStrengthBot";
+            this.txtYieldStrengthBot.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtYieldStrengthBot.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtYieldStrengthBot.Properties.MaskSettings.Set("mask", "f");
+            this.txtYieldStrengthBot.Size = new System.Drawing.Size(188, 20);
+            this.txtYieldStrengthBot.StyleController = this.layoutControl1;
+            this.txtYieldStrengthBot.TabIndex = 7;
+            // 
+            // txtUltimateStrengthBot
+            // 
+            this.txtUltimateStrengthBot.Location = new System.Drawing.Point(163, 462);
+            this.txtUltimateStrengthBot.Name = "txtUltimateStrengthBot";
+            this.txtUltimateStrengthBot.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtUltimateStrengthBot.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtUltimateStrengthBot.Properties.MaskSettings.Set("mask", "f");
+            this.txtUltimateStrengthBot.Size = new System.Drawing.Size(188, 20);
+            this.txtUltimateStrengthBot.StyleController = this.layoutControl1;
+            this.txtUltimateStrengthBot.TabIndex = 8;
+            // 
+            // txtUltimateStrainBot
+            // 
+            this.txtUltimateStrainBot.Location = new System.Drawing.Point(163, 486);
+            this.txtUltimateStrainBot.Name = "txtUltimateStrainBot";
+            this.txtUltimateStrainBot.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtUltimateStrainBot.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtUltimateStrainBot.Properties.MaskSettings.Set("mask", "0.000");
+            this.txtUltimateStrainBot.Size = new System.Drawing.Size(188, 20);
+            this.txtUltimateStrainBot.StyleController = this.layoutControl1;
+            this.txtUltimateStrainBot.TabIndex = 9;
             // 
             // Root
             // 
@@ -165,17 +284,6 @@
             this.layoutControlItem2.Text = "Count";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(115, 13);
             // 
-            // txtCountTop
-            // 
-            this.txtCountTop.Location = new System.Drawing.Point(163, 78);
-            this.txtCountTop.Name = "txtCountTop";
-            this.txtCountTop.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.txtCountTop.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
-            this.txtCountTop.Properties.MaskSettings.Set("mask", "f");
-            this.txtCountTop.Size = new System.Drawing.Size(188, 20);
-            this.txtCountTop.StyleController = this.layoutControl1;
-            this.txtCountTop.TabIndex = 5;
-            // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.txtDiameterTop;
@@ -184,17 +292,6 @@
             this.layoutControlItem3.Size = new System.Drawing.Size(319, 24);
             this.layoutControlItem3.Text = "Diameter (mm)";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(115, 13);
-            // 
-            // txtDiameterTop
-            // 
-            this.txtDiameterTop.Location = new System.Drawing.Point(163, 102);
-            this.txtDiameterTop.Name = "txtDiameterTop";
-            this.txtDiameterTop.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.txtDiameterTop.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
-            this.txtDiameterTop.Properties.MaskSettings.Set("mask", "f");
-            this.txtDiameterTop.Size = new System.Drawing.Size(188, 20);
-            this.txtDiameterTop.StyleController = this.layoutControl1;
-            this.txtDiameterTop.TabIndex = 6;
             // 
             // layoutControlGroup2
             // 
@@ -219,17 +316,6 @@
             this.layoutControlItem1.Text = "Yielding Strength (MPa)";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(115, 13);
             // 
-            // txtYieldStrengthTop
-            // 
-            this.txtYieldStrengthTop.Location = new System.Drawing.Point(163, 171);
-            this.txtYieldStrengthTop.Name = "txtYieldStrengthTop";
-            this.txtYieldStrengthTop.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.txtYieldStrengthTop.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
-            this.txtYieldStrengthTop.Properties.MaskSettings.Set("mask", "f");
-            this.txtYieldStrengthTop.Size = new System.Drawing.Size(188, 20);
-            this.txtYieldStrengthTop.StyleController = this.layoutControl1;
-            this.txtYieldStrengthTop.TabIndex = 7;
-            // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.txtUltimateStrengthTop;
@@ -239,17 +325,6 @@
             this.layoutControlItem4.Text = "Ultimate Strength (MPa)";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(115, 13);
             // 
-            // txtUltimateStrengthTop
-            // 
-            this.txtUltimateStrengthTop.Location = new System.Drawing.Point(163, 195);
-            this.txtUltimateStrengthTop.Name = "txtUltimateStrengthTop";
-            this.txtUltimateStrengthTop.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.txtUltimateStrengthTop.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
-            this.txtUltimateStrengthTop.Properties.MaskSettings.Set("mask", "f");
-            this.txtUltimateStrengthTop.Size = new System.Drawing.Size(188, 20);
-            this.txtUltimateStrengthTop.StyleController = this.layoutControl1;
-            this.txtUltimateStrengthTop.TabIndex = 8;
-            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.txtUltimateStrainTop;
@@ -258,72 +333,6 @@
             this.layoutControlItem5.Size = new System.Drawing.Size(319, 24);
             this.layoutControlItem5.Text = "Ultimate Strain";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(115, 13);
-            // 
-            // txtUltimateStrainTop
-            // 
-            this.txtUltimateStrainTop.Location = new System.Drawing.Point(163, 219);
-            this.txtUltimateStrainTop.Name = "txtUltimateStrainTop";
-            this.txtUltimateStrainTop.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.txtUltimateStrainTop.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
-            this.txtUltimateStrainTop.Properties.MaskSettings.Set("mask", "f");
-            this.txtUltimateStrainTop.Size = new System.Drawing.Size(188, 20);
-            this.txtUltimateStrainTop.StyleController = this.layoutControl1;
-            this.txtUltimateStrainTop.TabIndex = 9;
-            // 
-            // txtUltimateStrengthBot
-            // 
-            this.txtUltimateStrengthBot.Location = new System.Drawing.Point(163, 462);
-            this.txtUltimateStrengthBot.Name = "txtUltimateStrengthBot";
-            this.txtUltimateStrengthBot.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.txtUltimateStrengthBot.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
-            this.txtUltimateStrengthBot.Properties.MaskSettings.Set("mask", "f");
-            this.txtUltimateStrengthBot.Size = new System.Drawing.Size(188, 20);
-            this.txtUltimateStrengthBot.StyleController = this.layoutControl1;
-            this.txtUltimateStrengthBot.TabIndex = 8;
-            // 
-            // txtCountBot
-            // 
-            this.txtCountBot.Location = new System.Drawing.Point(163, 345);
-            this.txtCountBot.Name = "txtCountBot";
-            this.txtCountBot.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.txtCountBot.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
-            this.txtCountBot.Properties.MaskSettings.Set("mask", "f");
-            this.txtCountBot.Size = new System.Drawing.Size(188, 20);
-            this.txtCountBot.StyleController = this.layoutControl1;
-            this.txtCountBot.TabIndex = 5;
-            // 
-            // txtYieldStrengthBot
-            // 
-            this.txtYieldStrengthBot.Location = new System.Drawing.Point(163, 438);
-            this.txtYieldStrengthBot.Name = "txtYieldStrengthBot";
-            this.txtYieldStrengthBot.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.txtYieldStrengthBot.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
-            this.txtYieldStrengthBot.Properties.MaskSettings.Set("mask", "f");
-            this.txtYieldStrengthBot.Size = new System.Drawing.Size(188, 20);
-            this.txtYieldStrengthBot.StyleController = this.layoutControl1;
-            this.txtYieldStrengthBot.TabIndex = 7;
-            // 
-            // txtDiameterBot
-            // 
-            this.txtDiameterBot.Location = new System.Drawing.Point(163, 369);
-            this.txtDiameterBot.Name = "txtDiameterBot";
-            this.txtDiameterBot.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.txtDiameterBot.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
-            this.txtDiameterBot.Properties.MaskSettings.Set("mask", "f");
-            this.txtDiameterBot.Size = new System.Drawing.Size(188, 20);
-            this.txtDiameterBot.StyleController = this.layoutControl1;
-            this.txtDiameterBot.TabIndex = 6;
-            // 
-            // txtUltimateStrainBot
-            // 
-            this.txtUltimateStrainBot.Location = new System.Drawing.Point(163, 486);
-            this.txtUltimateStrainBot.Name = "txtUltimateStrainBot";
-            this.txtUltimateStrainBot.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.txtUltimateStrainBot.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
-            this.txtUltimateStrainBot.Properties.MaskSettings.Set("mask", "f");
-            this.txtUltimateStrainBot.Size = new System.Drawing.Size(188, 20);
-            this.txtUltimateStrainBot.StyleController = this.layoutControl1;
-            this.txtUltimateStrainBot.TabIndex = 9;
             // 
             // layoutControlGroup5
             // 
@@ -430,15 +439,6 @@
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(12, 534);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(363, 22);
-            this.btnSave.StyleController = this.layoutControl1;
-            this.btnSave.TabIndex = 10;
-            this.btnSave.Text = "Save";
-            // 
             // ucLongitudinalBar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -448,26 +448,26 @@
             this.Size = new System.Drawing.Size(387, 568);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtDiameterTop.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCountTop.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtYieldStrengthTop.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUltimateStrengthTop.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUltimateStrainTop.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCountBot.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDiameterBot.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtYieldStrengthBot.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUltimateStrengthBot.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUltimateStrainBot.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCountTop.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDiameterTop.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtYieldStrengthTop.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUltimateStrengthTop.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUltimateStrainTop.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUltimateStrengthBot.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCountBot.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtYieldStrengthBot.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDiameterBot.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUltimateStrainBot.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();

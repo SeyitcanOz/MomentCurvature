@@ -30,13 +30,11 @@
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtAxialLoad = new DevExpress.XtraEditors.TextEdit();
-            this.txtBalanceError = new DevExpress.XtraEditors.TextEdit();
             this.txtNumberOfLayers = new DevExpress.XtraEditors.TextEdit();
-            this.txtStrainIncrement = new DevExpress.XtraEditors.TextEdit();
+            this.txtNumberOfPoints = new DevExpress.XtraEditors.TextEdit();
             this.btnDrawMC = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -45,12 +43,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtAxialLoad.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBalanceError.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumberOfLayers.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtStrainIncrement.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNumberOfPoints.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
@@ -61,9 +57,8 @@
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.txtAxialLoad);
-            this.layoutControl1.Controls.Add(this.txtBalanceError);
             this.layoutControl1.Controls.Add(this.txtNumberOfLayers);
-            this.layoutControl1.Controls.Add(this.txtStrainIncrement);
+            this.layoutControl1.Controls.Add(this.txtNumberOfPoints);
             this.layoutControl1.Controls.Add(this.btnDrawMC);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
@@ -76,43 +71,34 @@
             // 
             // txtAxialLoad
             // 
-            this.txtAxialLoad.Location = new System.Drawing.Point(123, 45);
+            this.txtAxialLoad.Location = new System.Drawing.Point(121, 57);
             this.txtAxialLoad.Name = "txtAxialLoad";
             this.txtAxialLoad.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtAxialLoad.Properties.MaskSettings.Set("mask", "f");
-            this.txtAxialLoad.Size = new System.Drawing.Size(50, 20);
+            this.txtAxialLoad.Size = new System.Drawing.Size(52, 20);
             this.txtAxialLoad.StyleController = this.layoutControl1;
             this.txtAxialLoad.TabIndex = 4;
             // 
-            // txtBalanceError
-            // 
-            this.txtBalanceError.Location = new System.Drawing.Point(123, 69);
-            this.txtBalanceError.Name = "txtBalanceError";
-            this.txtBalanceError.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.txtBalanceError.Properties.MaskSettings.Set("mask", "f");
-            this.txtBalanceError.Size = new System.Drawing.Size(50, 20);
-            this.txtBalanceError.StyleController = this.layoutControl1;
-            this.txtBalanceError.TabIndex = 5;
-            // 
             // txtNumberOfLayers
             // 
-            this.txtNumberOfLayers.Location = new System.Drawing.Point(300, 45);
+            this.txtNumberOfLayers.Location = new System.Drawing.Point(298, 45);
             this.txtNumberOfLayers.Name = "txtNumberOfLayers";
             this.txtNumberOfLayers.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtNumberOfLayers.Properties.MaskSettings.Set("mask", "d");
-            this.txtNumberOfLayers.Size = new System.Drawing.Size(64, 20);
+            this.txtNumberOfLayers.Size = new System.Drawing.Size(66, 20);
             this.txtNumberOfLayers.StyleController = this.layoutControl1;
             this.txtNumberOfLayers.TabIndex = 6;
             // 
-            // txtStrainIncrement
+            // txtNumberOfPoints
             // 
-            this.txtStrainIncrement.Location = new System.Drawing.Point(300, 69);
-            this.txtStrainIncrement.Name = "txtStrainIncrement";
-            this.txtStrainIncrement.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.txtStrainIncrement.Properties.MaskSettings.Set("mask", "0.0000");
-            this.txtStrainIncrement.Size = new System.Drawing.Size(64, 20);
-            this.txtStrainIncrement.StyleController = this.layoutControl1;
-            this.txtStrainIncrement.TabIndex = 7;
+            this.txtNumberOfPoints.Location = new System.Drawing.Point(298, 69);
+            this.txtNumberOfPoints.Name = "txtNumberOfPoints";
+            this.txtNumberOfPoints.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtNumberOfPoints.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtNumberOfPoints.Properties.MaskSettings.Set("mask", "d");
+            this.txtNumberOfPoints.Size = new System.Drawing.Size(66, 20);
+            this.txtNumberOfPoints.StyleController = this.layoutControl1;
+            this.txtNumberOfPoints.TabIndex = 7;
             // 
             // btnDrawMC
             // 
@@ -138,30 +124,22 @@
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem2,
             this.layoutControlItem1});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(177, 93);
             this.layoutControlGroup1.Text = "Loading Properties";
             // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.txtBalanceError;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(153, 24);
-            this.layoutControlItem2.Text = "Balance Error (kN)";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(87, 13);
-            // 
             // layoutControlItem1
             // 
+            this.layoutControlItem1.ContentHorzAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.layoutControlItem1.ContentVertAlignment = DevExpress.Utils.VertAlignment.Center;
             this.layoutControlItem1.Control = this.txtAxialLoad;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(153, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(153, 48);
             this.layoutControlItem1.Text = "Axial Load (kN)";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(87, 13);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(85, 13);
             // 
             // layoutControlItem5
             // 
@@ -190,16 +168,16 @@
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(167, 24);
             this.layoutControlItem3.Text = "Number of Layers";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(87, 13);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(85, 13);
             // 
             // layoutControlItem4
             // 
-            this.layoutControlItem4.Control = this.txtStrainIncrement;
+            this.layoutControlItem4.Control = this.txtNumberOfPoints;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(167, 24);
-            this.layoutControlItem4.Text = "Strain Increment";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(87, 13);
+            this.layoutControlItem4.Text = "Number of Points";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(85, 13);
             // 
             // ucCalcutation
             // 
@@ -211,12 +189,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtAxialLoad.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBalanceError.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumberOfLayers.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtStrainIncrement.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNumberOfPoints.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
@@ -232,12 +208,10 @@
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraEditors.TextEdit txtAxialLoad;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraEditors.TextEdit txtBalanceError;
         private DevExpress.XtraEditors.TextEdit txtNumberOfLayers;
-        private DevExpress.XtraEditors.TextEdit txtStrainIncrement;
+        private DevExpress.XtraEditors.TextEdit txtNumberOfPoints;
         private DevExpress.XtraEditors.SimpleButton btnDrawMC;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;

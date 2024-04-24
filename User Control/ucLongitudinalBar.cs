@@ -55,23 +55,23 @@ namespace MomentCurvature.User_Control
         private void FillTextBoxes()
         {
             txtCountTop.Text = "2";
-            txtDiameterTop.Text = "16";
+            txtDiameterTop.Text = "20";
             txtYieldStrengthTop.Text = "420";
             txtUltimateStrengthTop.Text = "530";
-            txtUltimateStrainTop.Text = "0.08";
+            txtUltimateStrainTop.Text = "0,08";
 
             txtCountBot.Text = "2";
-            txtDiameterBot.Text = "16";
+            txtDiameterBot.Text = "20";
             txtYieldStrengthBot.Text = "420";
             txtUltimateStrengthBot.Text = "530";
-            txtUltimateStrainBot.Text = "0.08";
+            txtUltimateStrainBot.Text = "0,08";
         }
 
         private void AddLongitudinalBar()
         {
             //var concrete = Parent.Controls.Find("ucConcrete1", true).FirstOrDefault() as ucConcrete;
-            var concrete = Parent.Parent.Controls.Find("ucConcrete1", true).FirstOrDefault() as ucConcrete;
-            var stirrup = Parent.Parent.Controls.Find("ucStirrup1", true).FirstOrDefault() as ucStirrup;
+            var concrete = (Parent.Parent.Controls.Find("ucConcrete1", true).FirstOrDefault() as ucConcrete).Concrete;
+            var stirrup = (Parent.Parent.Controls.Find("ucStirrup1", true).FirstOrDefault() as ucStirrup).Stirrup;
 
 
             // Top Bar
@@ -80,7 +80,7 @@ namespace MomentCurvature.User_Control
             var yieldStrength = Convert.ToDouble(txtYieldStrengthTop.Text);
             var ultimateStrength = Convert.ToDouble(txtUltimateStrengthTop.Text);
             var ultimateStrain = Convert.ToDouble(txtUltimateStrainTop.Text);
-            var depth = concrete.Concrete.ClearCover + stirrup.Stirrup.Diameter + diameter / 2;
+            var depth = concrete.ClearCover + stirrup.Diameter + diameter / 2;
 
             var longSteelTop = new LongitudinalBar(depth, count, diameter, yieldStrength, ultimateStrength, ultimateStrain);
             LongitudinalBarList.Add(longSteelTop);
@@ -91,7 +91,7 @@ namespace MomentCurvature.User_Control
             yieldStrength = Convert.ToDouble(txtYieldStrengthBot.Text);
             ultimateStrength = Convert.ToDouble(txtUltimateStrengthBot.Text);
             ultimateStrain = Convert.ToDouble(txtUltimateStrainBot.Text);
-            depth = concrete.Concrete.Height - concrete.Concrete.ClearCover - stirrup.Stirrup.Diameter - diameter / 2;
+            depth = concrete.Height - concrete.ClearCover - stirrup.Diameter - diameter / 2;
 
             var longSteelBot = new LongitudinalBar(depth, count, diameter, yieldStrength, ultimateStrength, ultimateStrain);
             LongitudinalBarList.Add(longSteelBot);
