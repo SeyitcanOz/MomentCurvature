@@ -310,6 +310,7 @@ namespace MomentCurvature.User_Control
 
             var forceList = new List<double>();
 
+            var ultimateConfinedConcreteStrain = CalculateUltimateStrain();
             var stirrupFactor = _Stirrup.UseStirrup ? (_Concrete.ClearCover + _Stirrup.Diameter) : 0;
 
             foreach (var layerDepth in _MidLayerList)
@@ -322,7 +323,7 @@ namespace MomentCurvature.User_Control
                 var unconfinedForce = 0.0;
 
 
-                if (_Stirrup.UseStirrup) // Confined Zone
+                if (_Stirrup.UseStirrup && epsilonC <= ultimateConfinedConcreteStrain) // Confined Zone
                 {
                     confinedForce = epsilonC <= 0 ? 0 : _ConfinedAreaList[_MidLayerList.IndexOf(layerDepth)] * CalculateFC(epsilonC, true);
                 }
@@ -348,7 +349,7 @@ namespace MomentCurvature.User_Control
                 var depthDifference = neutralAxis - bar.Depth;
                 var stirrupFactor = _Stirrup.UseStirrup ? (_Concrete.ClearCover + _Stirrup.Diameter) : 0;
 
-                var epsilonSteel = Math.Abs(strain * depthDifference / (neutralAxis /*- stirrupFactor*/));
+                var epsilonSteel = Math.Abs(strain * depthDifference / (neutralAxis));
 
                 var steelForce = 0.0;
 
@@ -368,7 +369,7 @@ namespace MomentCurvature.User_Control
                     }
                 }
 
-                else if (epsilonSteel > bar.YieldStrain && epsilonSteel <= bar.UltimateStrain)
+                else if (epsilonSteel > bar.YieldStrain && epsilonSteel <= bar.HardeningStrain)
                 {
                     if (depthDifference > 0)
                     {
@@ -384,9 +385,24 @@ namespace MomentCurvature.User_Control
                     }
                 }
 
-                else
+                else if (epsilonSteel > bar.HardeningStrain && epsilonSteel <= bar.UltimateStrain)
                 {
-                    steelForce = 0;
+                    if (depthDifference > 0)
+                    {
+                        var steelStress = bar.UltimateStrength - (bar.UltimateStrength - bar.YieldStrength) * Math.Pow(bar.UltimateStrain - epsilonSteel, 2)
+                                                                                                     / Math.Pow(bar.UltimateStrain - bar.HardeningStrain, 2);
+                        steelForce = steelStress * bar.Area;
+                    }
+                    else if (depthDifference < 0)
+                    {
+                        var steelStress = bar.UltimateStrength - (bar.UltimateStrength - bar.YieldStrength) * Math.Pow(bar.UltimateStrain - epsilonSteel, 2)
+                                                                                                     / Math.Pow(bar.UltimateStrain - bar.HardeningStrain, 2);
+                        steelForce = - steelStress * bar.Area;
+                    }
+                    else
+                    {
+                        steelForce = 0;
+                    }
                 }
 
 
@@ -400,163 +416,86 @@ namespace MomentCurvature.User_Control
 
         #region Neutral Axis Calculation
 
-        public void LocateNeutralAxis(double numOfLayers, double strain, double axialLoad)
-        {
-            double neutralAxis = _Concrete.Height / 2;
-
-            if (strain == 0)
-            {
-                _NeutralAxisList.Add(neutralAxis);
-            }
-            else
-            {
-                double totalForce = 1;
-                double neutralAxisIncriment = Height / numOfLayers;
-
-                while (totalForce > 0)
-                {
-                    var concreteForces = CalculateForcesForLayer(neutralAxis, strain).Sum();
-                    var steelForces = CalculateSteelForces(neutralAxis, strain).Sum();
-                    totalForce = concreteForces + steelForces - axialLoad;
-
-                    neutralAxis -= neutralAxisIncriment;
-
-                    if (neutralAxis <= Height) { break; }
-
-                }
-
-                _NeutralAxisList.Add(neutralAxis);
-            }
-        }
-
-        //Neutral Axis Calculation
-        //private void LocateNeutralAxis(double balanceError, double strain, double axialLoad)
+        //public void LocateNeutralAxis(double numOfLayers, double strain, double axialLoad)
         //{
-        //    var numberOfLayers = Convert.ToInt32(txtNumberOfLayers.Text);
-        //    double lowerBound = 0;
-        //    double upperBound = _Concrete.Height;
-
-        //    // Better initial guess can be obtained based on known factors
         //    double neutralAxis = _Concrete.Height / 2;
 
-        //    // Maximum number of iterations to avoid infinite loops
-        //    int maxIterations = 1000;
-        //    int iterationCount = 0;
-
-        //    while (iterationCount < maxIterations)
+        //    if (strain == 0)
         //    {
-        //        iterationCount++;
-
-        //        var concreteForces = CalculateForcesForLayer(neutralAxis, strain).Sum();
-        //        var steelForces = CalculateSteelForces(neutralAxis, strain).Sum();
-        //        var totalForces = concreteForces + steelForces - axialLoad;
-
-        //        // Check if the total forces are within the balance error
-        //        if (Math.Abs(totalForces) < balanceError)
-        //        {
-        //            _NeutralAxisList.Add(neutralAxis);
-        //            break;
-        //        }
-
-        //        if (totalForces > balanceError)
-        //        {
-        //            upperBound = neutralAxis;
-        //        }
-        //        else
-        //        {
-        //            lowerBound = neutralAxis;
-        //        }
-
-        //        if (concreteForces < 1)
-        //        {
-        //            _NeutralAxisList.Add(neutralAxis);
-        //        }
-
-        //        // Update the neutral axis using bisection method
-        //        neutralAxis = (lowerBound + upperBound) / 2;
-
-        //        if (iterationCount == maxIterations)
-        //        {
-        //            _NeutralAxisList.Add(neutralAxis);
-        //            break;
-        //        }
-
+        //        _NeutralAxisList.Add(neutralAxis);
         //    }
+        //    else
+        //    {
+        //        double totalForce = 1;
+        //        double neutralAxisIncriment = Height / numOfLayers;
 
+        //        while (totalForce > 0)
+        //        {
+        //            var concreteForces = CalculateForcesForLayer(neutralAxis, strain).Sum();
+        //            var steelForces = CalculateSteelForces(neutralAxis, strain).Sum();
+        //            totalForce = concreteForces + steelForces - axialLoad;
 
+        //            neutralAxis -= neutralAxisIncriment;
+
+        //            if (neutralAxis <= Height) { break; }
+
+        //        }
+
+        //        _NeutralAxisList.Add(neutralAxis);
+        //    }
         //}
 
-        // Initializing Chart Data
+        //Neutral Axis Calculation
+        private void LocateNeutralAxis(double balanceError, double strain, double axialLoad)
+        {
+            var numberOfLayers = Convert.ToInt32(txtNumberOfLayers.Text);
+            double lowerBound = 0;
+            double upperBound = _Concrete.Height;
 
-        //private void CalculateMomentCurvature()
-        //{
-        //    GetConcreteStirrupAndBars(out _Concrete, out _Stirrup, out _LongitudinalBarList);
+            // Better initial guess can be obtained based on known factors
+            double neutralAxis = _Concrete.Height / 2;
 
-        //    FillAreasAndMidLayers();
+            // Maximum number of iterations to avoid infinite loops
+            int maxIterations = 2500;
+            int iterationCount = 0;
 
-        //    var balanceError = Convert.ToDouble(txtBalanceError.Text);
-        //    var axialLoad = Convert.ToDouble(txtAxialLoad.Text);
-        //    var numberOfPoints = Convert.ToInt32(txtNumberOfPoints.Text);
+            while (iterationCount < maxIterations)
+            {
+                iterationCount++;
 
-        //    var ultimateStrain = CalculateUltimateStrain();
-        //    var strainIncrement = ultimateStrain / (numberOfPoints - 1);
+                var concreteForces = CalculateForcesForLayer(neutralAxis, strain).Sum();
+                var steelForces = CalculateSteelForces(neutralAxis, strain).Sum();
+                var totalForces = concreteForces + steelForces - axialLoad;
 
-        //    var strainList = new List<double>();
+                // Check if the total forces are within the balance error
+                if (Math.Abs(totalForces) < 0.01)
+                {
+                    _NeutralAxisList.Add(neutralAxis);
+                    break;
+                }
 
-        //    var firstStrain = 0.0;
-        //    for (int i = 0; i < numberOfPoints; i++)
-        //    {
-        //        double currentStrain = firstStrain + i * strainIncrement;
-        //        strainList.Add(currentStrain);
-        //    }
+                if (totalForces > balanceError)
+                {
+                    upperBound = neutralAxis;
+                }
+                else
+                {
+                    lowerBound = neutralAxis;
+                }
 
-        //    // Add the ultimate strain if it's not included due to rounding errors
-        //    if (!strainList.Contains(ultimateStrain))
-        //    {
-        //        strainList.Add(ultimateStrain);
-        //    }
+                // Update the neutral axis using bisection method
+                neutralAxis = (lowerBound + upperBound) / 2;
 
-        //    for (int i = 0; i < strainList.Count; i++)
-        //    {
-        //        LocateNeutralAxis(balanceError, strainList[i], axialLoad);
-        //    }
+                if (iterationCount == maxIterations)
+                {
+                    _NeutralAxisList.Add(neutralAxis);
+                    break;
+                }
 
-        //    for (int i = 0; i < strainList.Count; i++)
-        //    {
-        //        if (strainList[i] == 0)
-        //        {
-        //            _CurvatureList.Add(0.0);
-        //            _MomentList.Add(0.0);
-        //        }
-        //        else
-        //        {
-        //            var stirrupFactor = _Stirrup.UseStirrup ? (_Concrete.ClearCover + _Stirrup.Diameter / 2) : 0;
-
-        //            _CurvatureList.Add(strainList[i] / (_NeutralAxisList[i] /*- stirrupFactor*/) * Math.Pow(10, 3)); // Convert to rad / km
-
-
-        //            //var moment = 0.0;
-        //            //for (int j = 0; j < _MidLayerList.Count; j++)
-        //            //{
-        //            //    moment += (CalculateForcesForLayer(neutralAxisList[i], strainList[i])[j] * (_Concrete.Height / 2 - _MidLayerList[j])) / 1000; // Convert to kN.m
-
-        //            //}
-
-        //            //var forceSteelTop = CalculateSteelForces(neutralAxisList[i], strainList[i])[0];
-        //            //var forceSteelBot = CalculateSteelForces(neutralAxisList[i], strainList[i])[1];
-
-        //            //var momentSteelTop = forceSteelTop * (_Concrete.Height / 2 - _LongitudinalBarList[0].Depth) / 1000; // Convert to kN.m
-        //            //var momentSteelBot = forceSteelBot * (_LongitudinalBarList[1].Depth - _Concrete.Height / 2) / 1000; // Convert to kN.m
-
-        //            //_MomentList.Add(moment + momentSteelTop - momentSteelBot);
+            }
 
 
-        //        }
-
-        //    }
-        //    var something = 0.0;
-
-        //} 
+        }
 
         #endregion
         private void CalculateMomentCurvature()
@@ -569,7 +508,8 @@ namespace MomentCurvature.User_Control
             var axialLoad = Convert.ToDouble(txtAxialLoad.Text);
             var numberOfPoints = Convert.ToInt32(txtNumberOfPoints.Text);
 
-            var ultimateStrain = CalculateUltimateStrain();
+            
+            var ultimateStrain = _Stirrup.UseStirrup ? 0.018 : 0.0035; // PBDY 5A.1 Epsilon Collapse Boundary Condition
             var strainIncrement = ultimateStrain / (numberOfPoints - 1);
 
             var strainList = new List<double>();
@@ -631,7 +571,7 @@ namespace MomentCurvature.User_Control
                     _MomentList.Add(moment);
 
                     // Calculate Curvature
-                    var curvature = strainList[i] / (_NeutralAxisList[i] /*- stirrupFactor*/) * Math.Pow(10, 3); // Convert to rad / m
+                    var curvature = strainList[i] / (_NeutralAxisList[i]) * Math.Pow(10, 6); // Convert to rad / m
                     _CurvatureList.Add(curvature);
                 }
             }
@@ -657,13 +597,13 @@ namespace MomentCurvature.User_Control
 
             // Set chart title and axis labels if needed
             chart.Titles.Add(new ChartTitle { Text = "Moment - Curvature" });
-            chart.Titles[0].DXFont = new DXFont("Tahoma", 16, DXFontStyle.Bold);
+            chart.Titles[0].DXFont = new DXFont("Tahoma", 16, DXFontStyle.Underline);
             chart.Titles[0].Visibility = DevExpress.Utils.DefaultBoolean.True;
 
             XYDiagram diagram = (XYDiagram)chart.Diagram;
 
             AxisX axisX = diagram.AxisX;
-            axisX.Title.Text = "Curvature (rad/m)";
+            axisX.Title.Text = "Curvature (rad/km)";
             diagram.AxisX.Title.DXFont = new DXFont("Tahoma", 14, DXFontStyle.Bold);
             axisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
 

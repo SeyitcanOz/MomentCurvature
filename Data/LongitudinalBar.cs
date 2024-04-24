@@ -16,7 +16,7 @@ namespace MomentCurvature.Data
            
         }
 
-        public LongitudinalBar(double depth,double count,double diameter,double yieldStrength,double ultimateStrength,double ultimateStrain):this()
+        public LongitudinalBar(double depth,double count,double diameter,double yieldStrength,double ultimateStrength,double hardeningStrain,double ultimateStrain):this()
         {
             Depth= depth;
             Count= count;
@@ -24,6 +24,7 @@ namespace MomentCurvature.Data
 
             YieldStrength = yieldStrength;
             UltimateStrength = ultimateStrength;
+            HardeningStrain = hardeningStrain;
             UltimateStrain = ultimateStrain;
                 
         }
@@ -38,6 +39,7 @@ namespace MomentCurvature.Data
 
         private double _YieldStrength;
         private double _UltimateStrength;
+        private double _HardeningStrain;
         private double _UltimateStrain;
 
 
@@ -52,6 +54,7 @@ namespace MomentCurvature.Data
         public double YieldStrength { get => _YieldStrength; set => _YieldStrength = value; }
         public double UltimateStrength { get => _UltimateStrength; set => _UltimateStrength = value; }
         public double YieldStrain { get => _YieldStrength / 200000; }
+        public double HardeningStrain { get => _HardeningStrain; set => _HardeningStrain = value; }
         public double UltimateStrain { get => _UltimateStrain; set => _UltimateStrain = value; }
         public double ElasticModulus { get => 200000; }
 

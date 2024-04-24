@@ -58,12 +58,14 @@ namespace MomentCurvature.User_Control
             txtDiameterTop.Text = "20";
             txtYieldStrengthTop.Text = "420";
             txtUltimateStrengthTop.Text = "530";
+            txtHardeningStrainTop.Text = "0,008";
             txtUltimateStrainTop.Text = "0,08";
 
             txtCountBot.Text = "2";
             txtDiameterBot.Text = "20";
             txtYieldStrengthBot.Text = "420";
             txtUltimateStrengthBot.Text = "530";
+            txtHardeningStrainBot.Text = "0,008";
             txtUltimateStrainBot.Text = "0,08";
         }
 
@@ -79,10 +81,11 @@ namespace MomentCurvature.User_Control
             var diameter = Convert.ToDouble(txtDiameterTop.Text);
             var yieldStrength = Convert.ToDouble(txtYieldStrengthTop.Text);
             var ultimateStrength = Convert.ToDouble(txtUltimateStrengthTop.Text);
+            var hardeningStrain = Convert.ToDouble(txtHardeningStrainTop.Text);
             var ultimateStrain = Convert.ToDouble(txtUltimateStrainTop.Text);
             var depth = concrete.ClearCover + stirrup.Diameter + diameter / 2;
 
-            var longSteelTop = new LongitudinalBar(depth, count, diameter, yieldStrength, ultimateStrength, ultimateStrain);
+            var longSteelTop = new LongitudinalBar(depth, count, diameter, yieldStrength, ultimateStrength, hardeningStrain,ultimateStrain);
             LongitudinalBarList.Add(longSteelTop);
 
             // Bottom Bar
@@ -90,10 +93,11 @@ namespace MomentCurvature.User_Control
             diameter = Convert.ToDouble(txtDiameterBot.Text);
             yieldStrength = Convert.ToDouble(txtYieldStrengthBot.Text);
             ultimateStrength = Convert.ToDouble(txtUltimateStrengthBot.Text);
+            hardeningStrain = Convert.ToDouble(txtHardeningStrainBot.Text);
             ultimateStrain = Convert.ToDouble(txtUltimateStrainBot.Text);
             depth = concrete.Height - concrete.ClearCover - stirrup.Diameter - diameter / 2;
 
-            var longSteelBot = new LongitudinalBar(depth, count, diameter, yieldStrength, ultimateStrength, ultimateStrain);
+            var longSteelBot = new LongitudinalBar(depth, count, diameter, yieldStrength, ultimateStrength,hardeningStrain, ultimateStrain);
             LongitudinalBarList.Add(longSteelBot);
 
 

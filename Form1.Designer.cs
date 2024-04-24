@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            MomentCurvature.Data.Concrete concrete1 = new MomentCurvature.Data.Concrete();
+            MomentCurvature.Data.Concrete concrete3 = new MomentCurvature.Data.Concrete();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pnlMainProperties = new DevExpress.XtraEditors.PanelControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
@@ -79,7 +79,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(5, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(481, 752);
+            this.xtraTabControl1.Size = new System.Drawing.Size(481, 765);
             this.xtraTabControl1.TabIndex = 2;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -95,11 +95,11 @@
             // 
             // ucConcrete1
             // 
-            concrete1.ClearCover = 0D;
-            concrete1.CompressiveStrength = 0D;
-            concrete1.Height = 0D;
-            concrete1.Width = 0D;
-            this.ucConcrete1.Concrete = concrete1;
+            concrete3.ClearCover = 0D;
+            concrete3.CompressiveStrength = 0D;
+            concrete3.Height = 0D;
+            concrete3.Width = 0D;
+            this.ucConcrete1.Concrete = concrete3;
             this.ucConcrete1.Location = new System.Drawing.Point(0, 0);
             this.ucConcrete1.Name = "ucConcrete1";
             this.ucConcrete1.Size = new System.Drawing.Size(479, 233);
@@ -109,7 +109,7 @@
             // 
             this.xtraTabPage3.Controls.Add(this.ucStirrup1);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(479, 727);
+            this.xtraTabPage3.Size = new System.Drawing.Size(479, 740);
             this.xtraTabPage3.Text = "Stirrup Properties";
             // 
             // ucStirrup1
@@ -125,15 +125,15 @@
             this.xtraTabPage2.Controls.Add(this.gridControl);
             this.xtraTabPage2.Controls.Add(this.ucLongitudinalBar1);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(479, 727);
+            this.xtraTabPage2.Size = new System.Drawing.Size(479, 740);
             this.xtraTabPage2.Text = "Longitudinal Steel Properties";
             // 
             // gridControl
             // 
-            this.gridControl.Location = new System.Drawing.Point(7, 572);
+            this.gridControl.Location = new System.Drawing.Point(0, 622);
             this.gridControl.MainView = this.gridView1;
             this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(470, 151);
+            this.gridControl.Size = new System.Drawing.Size(476, 106);
             this.gridControl.TabIndex = 2;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -172,7 +172,7 @@
             // 
             this.ucLongitudinalBar1.Location = new System.Drawing.Point(0, 0);
             this.ucLongitudinalBar1.Name = "ucLongitudinalBar1";
-            this.ucLongitudinalBar1.Size = new System.Drawing.Size(476, 566);
+            this.ucLongitudinalBar1.Size = new System.Drawing.Size(476, 616);
             this.ucLongitudinalBar1.TabIndex = 0;
             // 
             // pnlChart
@@ -240,7 +240,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 776);
+            this.ClientSize = new System.Drawing.Size(1370, 772);
             this.Controls.Add(this.pnlMemoEdit);
             this.Controls.Add(this.pnlCalculationProperties);
             this.Controls.Add(this.pnlChart);

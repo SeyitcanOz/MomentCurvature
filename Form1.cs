@@ -35,7 +35,8 @@ namespace MomentCurvature
             gridView1.Columns[4].Caption = "fy";
             gridView1.Columns[5].Caption = "fu";
             gridView1.Columns[6].Caption = "εsy";
-            gridView1.Columns[7].Caption = "εsu";
+            gridView1.Columns[7].Caption = "εsh";
+            gridView1.Columns[8].Caption = "εsu";
             gridView1.Columns[8].Caption = "E";
 
 
